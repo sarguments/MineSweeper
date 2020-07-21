@@ -1,3 +1,5 @@
+import strategy.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +13,15 @@ public class MineManager {
         this.numbers = numbers;
         this.rowCount = rowCount;
 
-        strategies.add(new LLCalculateStrategy());
-        strategies.add(new RRCalculateStrategy());
-        strategies.add(new UUCalculateStrategy());
-        strategies.add(new DDCalculateStrategy());
+        strategies.add(new LLCalculateStrategy(rowCount));
+        strategies.add(new RRCalculateStrategy(rowCount));
+        strategies.add(new UUCalculateStrategy(rowCount));
+        strategies.add(new DDCalculateStrategy(rowCount));
+
+        strategies.add(new LUCalculateStrategy(rowCount));
+        strategies.add(new RUCalculateStrategy(rowCount));
+        strategies.add(new LDCalculateStrategy(rowCount));
+        strategies.add(new RDCalculateStrategy(rowCount));
     }
 
     public List<Integer> calcMineNumbers() {
@@ -22,7 +29,7 @@ public class MineManager {
 
         numbers.forEach(
                 mineNumber -> strategies.stream().filter(
-                        strategy -> strategy.isCalculable(mineNumber, rowCount) && !numbers.contains(strategy.getCalculateNumber(mineNumber))
+                        strategy -> strategy.isCalculable(mineNumber) && !numbers.contains(strategy.getCalculateNumber(mineNumber))
                 ).forEach(filteredStrategy -> calculate(filteredStrategy, mineNumber, result))
         );
 
@@ -30,68 +37,9 @@ public class MineManager {
     }
 
     public void calculate(CalculateStrategy strategy, int mineNumber, List<Integer> result) {
-        if (strategy.isCalculable(mineNumber, rowCount)) {
+        if (strategy.isCalculable(mineNumber)) {
             result.add(strategy.getCalculateNumber(mineNumber));
         }
     }
 
-    interface CalculateStrategy {
-        boolean isCalculable(int mineNumber, int rowCount);
-
-        int getCalculateNumber(int number);
-    }
-
-    public static class LLCalculateStrategy implements CalculateStrategy {
-        @Override
-        public boolean isCalculable(int mineNumber, int rowCount) {
-            return mineNumber % rowCount > 0;
-        }
-
-        @Override
-        public int getCalculateNumber(int number) {
-            return number - 1;
-        }
-    }
-
-    public static class RRCalculateStrategy implements CalculateStrategy {
-        @Override
-        public boolean isCalculable(int mineNumber, int rowCount) {
-            return mineNumber % rowCount < rowCount - 1;
-        }
-
-        @Override
-        public int getCalculateNumber(int number) {
-            return number + 1;
-        }
-    }
-
-    public static class UUCalculateStrategy implements CalculateStrategy {
-        private int rowCount;
-
-        @Override
-        public boolean isCalculable(int mineNumber, int rowCount) {
-            this.rowCount = rowCount;
-            return mineNumber - rowCount >= 0;
-        }
-
-        @Override
-        public int getCalculateNumber(int number) {
-            return number - rowCount;
-        }
-    }
-
-    public static class DDCalculateStrategy implements CalculateStrategy {
-        private int rowCount;
-
-        @Override
-        public boolean isCalculable(int mineNumber, int rowCount) {
-            this.rowCount = rowCount;
-            return mineNumber + rowCount < rowCount * rowCount;
-        }
-
-        @Override
-        public int getCalculateNumber(int number) {
-            return number + rowCount;
-        }
-    }
 }

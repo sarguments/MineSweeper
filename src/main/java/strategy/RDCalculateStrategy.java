@@ -11,7 +11,7 @@ public class RDCalculateStrategy implements CalculateStrategy {
     }
 
     @Override
-    public boolean isCalculable(int mineNumber) {
+    public boolean isPassable(int mineNumber) {
         return (mineNumber % rowCount < rowCount - 1) && (mineNumber + rowCount < rowCount * rowCount);
     }
 

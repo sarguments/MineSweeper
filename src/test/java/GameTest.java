@@ -25,7 +25,7 @@ public class GameTest {
         );
     }
 
-    @DisplayName("두개의 지뢰 카운트가 겹치는 부분이 있는 경")
+    @DisplayName("두개의 지뢰 카운트가 겹치는 부분이 있는 경우")
     @Test
     void overlapTest() {
         Game game = new Game(5, Arrays.asList(7, 17));
@@ -41,7 +41,7 @@ public class GameTest {
         );
     }
 
-    @DisplayName("지뢰 카운트가 가장자리에 걸쳐서 범위를 벗어나는 경")
+    @DisplayName("지뢰 카운트가 가장자리에 걸쳐서 범위를 벗어나는 경우")
     @Test
     void outOfRangeTest() {
         Game game = new Game(5, Arrays.asList(0, 4, 20, 24));
@@ -73,7 +73,7 @@ public class GameTest {
         );
     }
 
-    @DisplayName("지뢰 갯수가 10개이고 테이블 크기가 10x10  경우")
+    @DisplayName("지뢰 갯수가 10개이고 테이블 크기가 10x10인 경우")
     @Test
     void tenMineTest() {
         Game game = new Game(10, Arrays.asList(12, 4, 22, 24, 40, 60, 99));

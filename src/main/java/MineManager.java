@@ -27,7 +27,7 @@ public class MineManager {
 
         numbers.forEach(
                 mineNumber -> strategies.stream().filter(
-                        strategy -> strategy.isCalculable(mineNumber) && !numbers.contains(strategy.getCalculateNumber(mineNumber))
+                        strategy -> strategy.isPassable(mineNumber) && !numbers.contains(strategy.getCalculateNumber(mineNumber))
                 ).forEach(filteredStrategy -> calculate(filteredStrategy, mineNumber, result))
         );
 
@@ -35,7 +35,7 @@ public class MineManager {
     }
 
     public void calculate(CalculateStrategy strategy, int mineNumber, List<Integer> result) {
-        if (strategy.isCalculable(mineNumber)) {
+        if (strategy.isPassable(mineNumber)) {
             result.add(strategy.getCalculateNumber(mineNumber));
         }
     }

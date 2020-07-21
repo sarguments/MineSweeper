@@ -14,6 +14,10 @@ public class Game {
     }
 
     public void print() {
+        if (boxManager.isEmpty()) {
+            throw new RuntimeException("지뢰가 배치되지 않았습니다.");
+        }
+
         boxManager.print();
     }
 }

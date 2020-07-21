@@ -96,7 +96,7 @@ public class GameTest {
         game.print();
     }
 
-    @DisplayName("랜덤 넘버 생성 후 주")
+    @DisplayName("랜덤 넘버 생성 후 주입")
     @Test
     void randomNumberGenerate() {
         List<Integer> generate = RandomNumbers.generate(0, 100, 10);

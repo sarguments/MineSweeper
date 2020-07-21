@@ -1,5 +1,8 @@
 import java.util.List;
 
+/**
+ * mineManager 로 부터 증가시킬 박스 넘버를 구해서 boxManager에 전달한다.
+ */
 public class Game {
     private final MineManager mineManager;
     private final BoxManager boxManager;

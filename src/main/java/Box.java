@@ -1,3 +1,6 @@
+/**
+ * 지뢰 카운트를 가지는 빈칸(박스)
+ */
 public class Box {
     private int mineCount;
 

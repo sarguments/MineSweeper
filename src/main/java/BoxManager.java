@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 지뢰찾기 빈칸(박스)를 초기화 시키고, 주어지는 번호에 해당하는 박스들의 지뢰 카운트를 증가시킨다.
+ * 박스 리스트는 2차원 지뢰찾기 테이블을 1차원으로 펼친 것으로 가정한다.
+ */
 public class BoxManager {
     private final List<Box> boxes;
     private final int rowCount;

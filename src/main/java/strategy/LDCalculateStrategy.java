@@ -1,5 +1,8 @@
 package strategy;
 
+/**
+ * 좌하단 지뢰 카운트 증가 가능 여부 판단
+ */
 public class LDCalculateStrategy implements CalculateStrategy {
     private int rowCount;
 

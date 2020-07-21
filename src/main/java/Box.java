@@ -8,4 +8,9 @@ public class Box {
     public int getMineCount() {
         return mineCount;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(mineCount);
+    }
 }

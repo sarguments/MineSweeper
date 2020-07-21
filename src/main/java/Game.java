@@ -12,4 +12,8 @@ public class Game {
     public List<Integer> spread() {
         return boxManager.spread(mineManager.calcMineNumbers());
     }
+
+    public void print() {
+        boxManager.print();
+    }
 }

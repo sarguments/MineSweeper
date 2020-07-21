@@ -6,12 +6,10 @@ import java.util.List;
 public class MineManager {
 
     private final List<Integer> numbers;
-    private final int rowCount;
     private final List<CalculateStrategy> strategies = new ArrayList<>();
 
     public MineManager(List<Integer> numbers, int rowCount) {
         this.numbers = numbers;
-        this.rowCount = rowCount;
 
         strategies.add(new LLCalculateStrategy(rowCount));
         strategies.add(new RRCalculateStrategy(rowCount));

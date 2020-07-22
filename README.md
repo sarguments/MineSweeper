@@ -13,3 +13,11 @@
 ## 빌드 & 실행
 1. `./gradlew clean build`
 2. `java -jar build/libs/MineSweeper-1.0-SNAPSHOT.jar`
+
+## 전체적인 흐름
+![](img/diagram.png)
+
+1. Game 객체에서 MineManager에게 카운트값을 증가시킬 박스 인덱스를 구하도록 명령
+2. MineManager 는 Game 객체 생성자로 주입받은 지뢰 인덱스에 대해 '해당 전략으로 이동이 가능한지' 를 만족하는 전략들을 필터링한다.
+3. 필터링된 전략을 돌면서 증가시킬 박스 인덱스를 구한다.
+4. Game 객체는 구한 박스 인덱스들을 BoxManager에게 넘겨서 실제로 박스들의 카운트 값을 증가시킨다.

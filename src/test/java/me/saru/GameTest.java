@@ -1,6 +1,9 @@
+package me.saru;
+
+import me.saru.Game;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import util.RandomNumbers;
+import me.saru.util.RandomNumbers;
 
 import java.util.Arrays;
 import java.util.List;

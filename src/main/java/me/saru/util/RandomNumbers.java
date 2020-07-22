@@ -1,4 +1,4 @@
-package util;
+package me.saru.util;
 
 import java.util.List;
 import java.util.Random;
@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 
 public class RandomNumbers {
     private static final Random random = new Random();
-    public static final int ZERO = 0;
+    public static final int MIN = 0;
 
     public static List<Integer> generate(int start, int end, int count) {
         if (start >= end) {
             throw new IllegalArgumentException("start 가 end 보다 클 수 없습니다.");
         }
 
-        if (start < ZERO || count < ZERO) {
+        if (start < MIN || count < MIN) {
             throw new IllegalArgumentException("start 가 0 보다 커야 합니다.");
         }
 

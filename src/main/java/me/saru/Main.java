@@ -1,4 +1,6 @@
-import util.RandomNumbers;
+package me.saru;
+
+import me.saru.util.RandomNumbers;
 
 public class Main {
     public static void main(String[] args) {

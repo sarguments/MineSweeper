@@ -1,4 +1,4 @@
-package strategy;
+package me.saru.strategy;
 
 /**
  * 하단 지뢰 카운트 증가 가능 여부 판단
@@ -16,7 +16,7 @@ public class DDCalculateStrategy implements CalculateStrategy {
     }
 
     @Override
-    public int getCalculateNumber(int number) {
-        return number + rowCount;
+    public int getCalculateNumber(int mineNumber) {
+        return mineNumber + rowCount;
     }
 }

@@ -19,6 +19,12 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'me.saru.Main'
+    }
+}
+
 test {
     useJUnitPlatform()
 }

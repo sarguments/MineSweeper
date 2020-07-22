@@ -1,4 +1,6 @@
-import strategy.*;
+package me.saru;
+
+import me.saru.strategy.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,7 +32,7 @@ public class MineManager {
 
     // 허용 범위 안에서 지뢰 카운트를 증가시킬 박스 인덱스를 구한다. 해당 인덱스에 지뢰가 이미 있는 경우는 제외한다.
     public List<Integer> calcMineNumbers() {
-        ArrayList<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
         // 리스트에 중복 숫자가 들어와도 해쉬셋 변환 시 중복 제거됨
         Set<Integer> collect = new HashSet<>(numbers);
